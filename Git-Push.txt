@@ -44,7 +44,7 @@ git add .                                                 → Prepare changes
 git commit -m "first commit"                              → Commit changes locally
 
 git reset --soft HEAD~1                                   → Only remove commit history entry.
-git checkout --orphan clean-main                          →  Creates a brand new branch (files remain but git history empty)
+git checkout --orphan clean-main                          → Creates a brand new branch (files remain but git history empty)
 git log                                                   → Shows commit history (commits, commit IDs, author, )
 git branch -D main                                        → Deletes branch forcefully.
 
@@ -63,5 +63,5 @@ git config --global http.lowSpeedTime 999999              → Give very long tim
 git config --global --unset http.lowSpeedLimit            → Reset lowSpeedLimit
 git config --global --unset http.lowSpeedTime             → Reset lowSpeedTime
 
-git config --global --unset credential.helper             →  Removes existing credential manager.
+git config --global --unset credential.helper             → Removes existing credential manager.
 git config --global credential.helper manager             → Restore Git Credential Manager
