@@ -42,13 +42,16 @@ git ls-files | findstr assets                             → Checking what Git 
 git rm -r --cached "docs"                                 → Optional remove tracked docs folder from Git
 git add .                                                 → Prepare changes
 git commit -m "first commit"                              → Commit changes locally
+
 git reset --soft HEAD~1                                   → Only remove commit history entry.
+git checkout --orphan clean-main                          →  Creates a brand new branch (files remain but git history empty)
+git log                                                   → Shows commit history (commits, commit IDs, author, )
+git branch -D main                                        → Deletes branch forcefully.
 
 git branch -m main                                        → Rename current branch to main.
 git branch -M main                                        → Force rename current branch, Even if branch already exists
 git push -u origin main                                   → First push to GitHub (connect branch + upload)
 git push                                                  → Future pushes (upload)
-
 
 git config --global --list                                → Verify current settings
 git config --global http.postBuffer 524288000             → Configure Large Upload Support (500 MB)
