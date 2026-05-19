@@ -1,0 +1,64 @@
+spring.application:
+ name: 07-Resilience4j
+server:
+  port: 8080
+resilience4j:
+
+  ratelimiter:
+    instances:
+      apiRateLimiter:
+        limit-for-period: 5
+        limit-refresh-period: 10s
+        timeout-duration: 0ms
+
+  bulkhead:
+    instances:
+      redisBulkhead:
+        max-concurrent-calls: 3
+        max-wait-duration: 0ms
+
+  thread-pool-bulkhead:
+    instances:
+      dbBulkhead:
+        core-thread-pool-size: 5
+        max-thread-pool-size: 10
+        queue-capacity: 10
+        keep-alive-duration: 20s
+
+  timelimiter:
+    instances:
+      redisTimeLimiter:
+        timeout-duration: 2s
+        cancel-running-future: true
+      dbTimeLimiter:
+        timeout-duration: 2s
+        cancel-running-future: true
+
+  circuitbreaker:
+    instances:
+      redisCircuitBreaker:
+        sliding-window-size: 10
+        minimum-number-of-calls: 5
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 30s
+        permitted-number-of-calls-in-half-open-state: 2
+
+
+
+
+
+logging:
+  level:
+    io.github.resilience4j.circuitbreaker: DEBUG
+    io.github.resilience4j.bulkhead: DEBUG
+    io.github.resilience4j.ratelimiter: DEBUG
+    io.github.resilience4j.timelimiter: DEBUG
+    org.springframework.context.annotation: DEBUG
+
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics

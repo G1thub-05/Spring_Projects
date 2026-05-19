@@ -1,0 +1,16 @@
+
+               Client
+                 ↓
+            RateLimiter       (controls request rate)
+                 ↓
+              Bulkhead        (limits concurrency)
+                 ↓
+            TimeLimiter       (limits execution time)
+                 ↓
+           CircuitBreaker     (stops repeated failures)
+                 ↓
+             Redis (A)
+                 ↓
+    (failure / slow / open circuit)
+                 ↓
+      Database (B) → fallback

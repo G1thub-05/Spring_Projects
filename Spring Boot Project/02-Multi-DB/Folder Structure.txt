@@ -1,0 +1,19 @@
+src/main/java/in/digeshwar/multidb
+│
+├── config
+│   ├── MySQLConfig.java
+│   └── H2Config.java
+│
+├── mysql
+│   ├── entity
+│   │   └── Employee.java
+│   └── repository
+│       └── EmployeeRepository.java
+│
+├── h2
+│   ├── entity
+│   │   └── Product.java
+│   └── repository
+│       └── ProductRepository.java
+│
+└── MultiDbApplication.java

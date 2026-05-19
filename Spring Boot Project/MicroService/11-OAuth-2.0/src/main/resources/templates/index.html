@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Secure API Portal</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="background"></div>
+
+<div class="glass-card">
+
+    <h1>Secure API Portal</h1>
+    <p>Role-Based OAuth System</p>
+
+    <div class="api-section">
+
+        <a href="/public/hello" class="btn public">
+            Public API
+        </a>
+
+        <a href="/api/profile" class="btn user">
+            User Profile
+        </a>
+
+        <a href="/admin/dashboard" class="btn admin">
+            Admin Dashboard
+        </a>
+
+    </div>
+
+    <div class="footer">
+        OAuth 2.0 • Spring Security • JWT
+    </div>
+
+
+    <form action="/logout" method="post">
+        <button type="submit">Logout</button>
+    </form>
+
+</div>
+
+
+
+</body>
+</html>

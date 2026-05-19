@@ -1,0 +1,34 @@
+server:
+    port: 8080
+
+logging:
+    level:
+        org.springframework.security: DEBUG
+        org.springframework.security.oauth2: DEBUG
+spring:
+    application:
+        name: 10-API-GATEWAY
+
+    security:
+        oauth2:
+            resourceserver:
+                jwt:
+                    issuer-uri: http://localhost:8081
+
+    cloud:
+        gateway:
+            routes:
+
+                # 🔓 PUBLIC (no JWT)
+                - id: auth-service
+                  uri: http://localhost:8081
+                  predicates:
+                      - Path=/auth/**
+
+                # 🔐 PROTECTED
+                - id: protected-service
+                  uri: http://localhost:8081
+                  predicates:
+                      - Path=/api/**
+
+

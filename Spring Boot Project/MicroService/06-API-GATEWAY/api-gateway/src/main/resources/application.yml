@@ -1,0 +1,63 @@
+#jwt:
+#  public-key: classpath:public.pem
+#
+#server:
+#  port: 8080
+#
+#spring:
+#  security:
+#    oauth2:
+#      resourceserver:
+#        jwt:
+#          jwk-set-uri: http://auth-service/.well-known/jwks.json
+#
+#  main:
+#    web-application-type: reactive
+#
+#  application:
+#    name: api-gateway
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: auth-service
+#          uri: http://localhost:8081
+#          predicates:
+#            - Path=/auth/**
+#
+#        - id: order-service
+#          uri: http://localhost:8082
+#          predicates:
+#            - Path=/orders/**
+#          filters:
+#            - JwtGatewayFilter
+
+#_________________________________
+
+server:
+  port: 8080
+
+spring:
+  main:
+    web-application-type: reactive
+
+  application:
+    name: api-gateway
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8081/.well-known/jwks.json
+
+  cloud:
+    gateway:
+      routes:
+        - id: auth-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/auth/**
+
+        - id: order-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/orders/**

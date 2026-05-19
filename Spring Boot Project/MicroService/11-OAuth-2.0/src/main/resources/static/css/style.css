@@ -1,0 +1,135 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Background */
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+/* Animated background blur */
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #667eea, #764ba2, #6dd5fa);
+    background-size: 300% 300%;
+    animation: gradientMove 8s ease infinite;
+    filter: blur(80px);
+    z-index: -1;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Glass Card */
+.glass-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 40px 35px;
+    width: 380px;
+    text-align: center;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Heading */
+.glass-card h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.glass-card p {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+
+/* API Section */
+.api-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* Buttons */
+.btn {
+    padding: 14px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+/* Public Button */
+.btn.public {
+    background: linear-gradient(135deg, #43cea2, #185a9d);
+    color: #fff;
+}
+
+/* User Button */
+.btn.user {
+    background: linear-gradient(135deg, #f7971e, #ffd200);
+    color: #222;
+}
+
+/* Admin Button */
+.btn.admin {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: #fff;
+}
+
+/* Hover Effects */
+.btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+}
+
+/* Footer */
+.footer {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-bottom: 20px;
+}
+
+/* Logout Button */
+form button {
+    padding: 12px 22px;
+    border-radius: 30px;
+    border: none;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-size: 14px;
+}
+
+form button:hover {
+    background: rgba(255,255,255,0.35);
+    transform: scale(1.05);
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .glass-card {
+        width: 90%;
+        padding: 30px 20px;
+    }
+}
