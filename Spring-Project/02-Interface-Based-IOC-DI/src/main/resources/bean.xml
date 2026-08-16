@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+         http://www.springframework.org/schema/beans
+         https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="SonyPrinter" class="in.digeshwar.SonyPrinter"/>
+    <bean id="HpPrinter" class="in.digeshwar.HpPrinter"/>
+    <bean id="atm" class="in.digeshwar.ATM">
+        <constructor-arg ref="SonyPrinter"/>
+        <property name="myhp" ref="HpPrinter"/>
+    </bean>
+</beans>

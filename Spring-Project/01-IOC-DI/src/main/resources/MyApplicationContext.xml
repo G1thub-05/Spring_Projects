@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+         http://www.springframework.org/schema/beans
+         https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--  bean definitions here 👇 -->
+
+    <!-- Define Engine bean and call no-arg Engine constructor in Engine Class-->
+    <bean id="engine" class="in.digeshwar.Engine"/>
+
+    <!-- Define Car bean and call arg Car constructor in Car Class -->
+    <!-- Inject Engine in Car via Constructor DI -->
+    <bean id="carConstructor" class="in.digeshwar.Car">
+        <constructor-arg name="c_engine" ref="engine"/>
+    </bean>
+
+    <!-- Define Car bean and call no-arg Car constructor in Car Class -->
+    <!-- Then Setter method override them and Inject Engine in Car via Setter DI-->
+    <bean id="carSetter" class="in.digeshwar.Car">
+        <property name="my_s_engine" ref="engine"/>
+    </bean>
+</beans>
