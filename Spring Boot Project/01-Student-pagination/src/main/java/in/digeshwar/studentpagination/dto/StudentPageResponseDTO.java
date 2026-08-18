@@ -15,13 +15,18 @@ public class StudentPageResponseDTO {
 	private boolean first;
 	private boolean last;
 
+	private boolean hasNext;
+	private boolean hasPrevious;
+
 	public StudentPageResponseDTO(
 			List<Student> students,
 			long totalElements,
 			int totalPages,
 			int currentPage,
 			boolean first,
-			boolean last) {
+			boolean last,
+			boolean hasNext,
+			boolean hasPrevious) {
 
 		this.students = students;
 		this.totalElements = totalElements;
@@ -29,29 +34,19 @@ public class StudentPageResponseDTO {
 		this.currentPage = currentPage;
 		this.first = first;
 		this.last = last;
+		this.hasNext = hasNext;
+		this.hasPrevious = hasPrevious;
+
 	}
 
 	public List<Student> getStudents() {
 		return students;
 	}
-
-	public long getTotalElements() {
-		return totalElements;
-	}
-
-	public int getTotalPages() {
-		return totalPages;
-	}
-
-	public int getCurrentPage() {
-		return currentPage;
-	}
-
-	public boolean isFirst() {
-		return first;
-	}
-
-	public boolean isLast() {
-		return last;
-	}
+	public long getTotalElements() {return totalElements;}
+	public int getTotalPages() {return totalPages;}
+	public int getCurrentPage() {return currentPage;}
+	public boolean isFirst() {return first;}
+	public boolean isLast() {return last;}
+	public boolean isHasNext() {return hasNext;}
+	public boolean isHasPrevious() {return hasPrevious;}
 }

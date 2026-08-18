@@ -18,10 +18,12 @@ public class StudentController {
 
 	@GetMapping
 	public StudentPageResponseDTO getStudents(
+			@RequestParam String course,
 			@RequestParam int pageNum,
 			@RequestParam int pageSize) {
 
 		return studentService.getStudents(
+				course,
 				pageNum,
 				pageSize
 		);

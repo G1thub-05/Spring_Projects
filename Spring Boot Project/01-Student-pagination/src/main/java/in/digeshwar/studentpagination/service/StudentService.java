@@ -4,9 +4,7 @@ import in.digeshwar.studentpagination.dto.StudentPageResponseDTO;
 import in.digeshwar.studentpagination.entity.Student;
 import in.digeshwar.studentpagination.repository.StudentRepository;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -17,8 +15,18 @@ public class StudentService {
 	public StudentService(StudentRepository studentRepository) {
 		this.studentRepository = studentRepository;
 	}
+	public Slice<Student> getStudents(
+			String course,
+			Pageable pageable) {
+
+		return studentRepository.findByCourse(
+				course,
+				pageable
+		);
+	}
 
 	public StudentPageResponseDTO getStudents(
+			String course,
 			int pageNum,
 			int pageSize) {
 
@@ -29,28 +37,18 @@ public class StudentService {
 						Sort.by("id").descending()
 				);
 
-		Page<Student> page =
-				studentRepository.findAll(pageRequest);
+		Page<Student> page = studentRepository.findAll(pageRequest);
+		Slice<Student> slice = studentRepository.findByCourse(course,pageRequest);
 
 		return new StudentPageResponseDTO(
-
-				// Current page students
-				page.getContent(),
-
-				// Total records
-				page.getTotalElements(),
-
-				// Total pages
-				page.getTotalPages(),
-
-				// Current page → convert 0-based to 1-based
-				page.getNumber() + 1,
-
-				// Is first page?
-				page.isFirst(),
-
-				// Is last page?
-				page.isLast()
+				page.getContent(),       // Current page students
+				page.getTotalElements(), // Total records
+				page.getTotalPages(),    // Total pages
+				page.getNumber() + 1,    // Current page → convert 0-based to 1-based
+				page.isFirst(),          // Is first page?
+				page.isLast(),           // Is last page?
+				slice.hasNext(),         // Has next page?
+				slice.hasPrevious()      // Has previous page?
 		);
 	}
 }

@@ -25,7 +25,7 @@ import org.springframework.context.annotation.Bean;
                 System.out.println("=== PRACTICE CRUD START ===");
 
 
-                // 1️⃣ CREATE teacher with students
+                // CREATE teacher with students
 
                 Teacher t = new Teacher();
                 t.setName("Mr. John");
