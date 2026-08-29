@@ -8,23 +8,40 @@ public class ArmstrongNumber {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("Enter a number: ");
-		int org = sc.nextInt();
+		System.out.print("Enter the number: ");
 
-		int modified = org;
-		int sum = 0;
+		if(sc.hasNextInt()) {
+			int number = sc.nextInt();
 
-		while(modified != 0) {
-			int digit = modified % 10;
-			sum = sum + (digit * digit * digit);
-			modified = modified / 10;
-		}
+			if(number < 0) {
+				System.out.println("Armstrong number is defined for non-negative integers.");
+			} else {
 
-		// 153 = 1³ + 5³ + 3³ = 153
-		if(org == sum) {
-			System.out.println(org + " is an Armstrong Number");
+				int count = 0;
+				int n = number;
+
+				// Count digits
+				do {
+					n /= 10;
+					count++;
+				} while(n != 0);
+
+				int sum = 0;
+				n = number;
+
+				// Calculate Armstrong sum
+				do {
+					int rem = n % 10;
+					sum += (int) Math.pow(rem, count);
+					n /= 10;
+				} while(n != 0);
+
+				System.out.println(
+						"Sum of digits in " + number + " is " + sum + " and it is " + (sum == number ? "an Armstrong Number" : "not an Armstrong Number"));
+			}
+
 		} else {
-			System.out.println(org + " is not an Armstrong Number");
+			System.out.println("Input is not a valid integer.");
 		}
 
 		sc.close();
