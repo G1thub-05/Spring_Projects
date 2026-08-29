@@ -1,0 +1,80 @@
+Level 1 — Java Basics
+
+Even/Odd check
+Largest of 3 numbers
+Swap two numbers
+Factorial
+Prime number
+Fibonacci series
+Reverse a number
+Palindrome number
+Armstrong number
+Sum of digits
+
+
+Level 2 — Strings
+
+Reverse a String
+Check palindrome String
+Count vowels and consonants
+Find duplicate characters
+First non-repeated character
+Character frequency
+Anagram check
+Remove duplicate characters
+Reverse words in a sentence
+Find longest word
+
+Level 3 — Arrays
+
+Find largest/second largest element
+Find smallest/second smallest
+Reverse an array
+Sort an array
+Find duplicate elements
+Remove duplicates
+Missing number in array
+Move all zeros to end
+Find frequency of elements
+Two Sum
+
+Level 4 — Collections
+
+Remove duplicates using HashSet
+Character frequency using HashMap
+Sort List<Integer>
+Sort custom objects
+Find duplicate elements using Set
+Group objects using Streams
+Convert List to Map
+Find max/min using Streams
+Find second highest number
+Count frequency using Streams
+
+Level 5 — Java 8+ (Very Important for Interviews)
+
+Filter even numbers
+Map Strings to uppercase
+Find duplicate elements using Streams
+First non-repeated character
+Second highest salary
+Group employees by department
+Sort employees by salary
+Partition even/odd numbers
+Flatten nested lists using flatMap
+Find frequency of each character
+
+Level 6 — OOP + Real Java
+
+Design an immutable class
+Implement Singleton correctly
+Create custom Comparator
+Override equals() and hashCode()
+Thread-safe counter
+Producer–Consumer problem
+Custom Exception
+LRU Cache
+Design a simple Employee Management system
+Build CRUD logic using Java Collections
+
+Brutally honest advice: Agar tum Java Full Stack/Spring Boot ki preparation kar rahe ho, to 100 Fibonacci-type questions solve karke kuch khas benefit nahi hoga. Basics ke 10–15 questions ke baad focus Strings + Arrays + Collections + Streams + OOP + real-world logic par hona chahiye. Ye interviews aur actual backend coding dono me zyada kaam aayega.
