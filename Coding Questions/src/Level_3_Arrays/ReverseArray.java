@@ -1,5 +1,6 @@
 package Level_3_Arrays;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ReverseArray {
@@ -38,5 +39,17 @@ public class ReverseArray {
 		}
 
 		sc.close();
+	}
+
+	public static void reverseArray() {
+		int[] arr1 = {11, 66, 9, 5, 44};
+		int[] arr2 = new int[arr1.length];
+		int ln = 0;
+		for (int i = arr1.length -1; i >= 0; i--) {
+			arr2[ln] = arr1[i];
+			ln++;
+		}
+		System.out.println(Arrays.toString(arr1));
+		System.out.println(Arrays.toString(arr2));
 	}
 }

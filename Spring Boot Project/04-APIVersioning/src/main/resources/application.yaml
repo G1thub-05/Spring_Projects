@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: demo
+api:
+  v2:
+    users-url: http://localhost:8080/api/v2/users
+
+springdoc:
+  swagger-ui:
+    urls:
+      - name: OpenAPI YAML         # 👈 Display name in Swagger UI
+        url: /openapi.yaml
+      - name: Users-v1
+        url: /v3/api-docs/Users-v1 # 👈 /v3/api-docs is Spring Doc's default for generated OpenAPI.
+      - name: Users-v2
+        url: /v3/api-docs/Users-v2

@@ -1,0 +1,48 @@
+
+openapi: 3.0.3
+
+info:
+  title: API Versioning
+  version: 1.0.0
+
+paths:
+  /api/v1/users/{id}:
+    get:
+      deprecated: true
+      summary: Get users - V1
+      description: >
+        This API is deprecated.Please migrate to /api/v2/users.
+        V1 will be retired on Sunset date: 31 December 2027.
+
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Unique ID of the user
+          schema:
+            type: integer
+            format: int64
+            example: 7
+
+      responses:
+        '200':
+          description: Successful response
+
+          headers:
+            Deprecation:
+              description: Indicates that this API is deprecated.
+              schema:
+                type: string
+                example: "true"
+
+            Sunset:
+              description: Date and time when the API is scheduled to be retired.
+              schema:
+                type: string
+                example: "Wed, 31 Dec 2027 23:59:59 GMT"
+
+            Link:
+              description: Link to the successor API version.
+              schema:
+                type: string
+                example: '</api/v2/users>; rel="successor-version"'

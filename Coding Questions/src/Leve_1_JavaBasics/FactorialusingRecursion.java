@@ -26,7 +26,6 @@ public class FactorialusingRecursion {
 			long result = factorial(n);
 			System.out.println("Factorial of " + n + " = " + result);
 		}
-
 		sc.close();
 	}
 }

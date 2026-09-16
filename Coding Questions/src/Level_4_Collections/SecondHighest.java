@@ -11,7 +11,7 @@ public class SecondHighest {
 		int secondHighest = Arrays.stream(arr)
 				.distinct()
 				.boxed()
-				.sorted((a, b) -> b - a)
+				.sorted((a, b) -> Integer.compare(b, a))
 				.skip(1)
 				.findFirst()
 				.get();

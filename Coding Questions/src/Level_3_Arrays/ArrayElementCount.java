@@ -23,7 +23,6 @@ public class ArrayElementCount {
 	public static void countUsingForEach(int[] arr) {
 
 		int count = 0;
-
 		for (int num : arr) {
 			count++;
 		}
