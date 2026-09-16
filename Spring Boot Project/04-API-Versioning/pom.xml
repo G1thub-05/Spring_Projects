@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>in.digeshwar</groupId>
-    <artifactId>04-APIVersioning</artifactId>
+    <artifactId>04-API-Versioning</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>demo</name>
     <description>demo</description>
